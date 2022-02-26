@@ -32,5 +32,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.menuData = this.dataService.menu;
   }
+  
+  scroll(id: string) {
+    document.getElementById(id)?.scrollIntoView();
+  }
 
 }

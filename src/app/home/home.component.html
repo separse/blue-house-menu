@@ -22,6 +22,7 @@
             [fragment]="category.category"
             routerLinkActive="router-link-active"
             [routerLinkActiveOptions]="{ exact: true }"
+            (click)="scroll(category.category)"
         >
             <fa-icon [icon]="category.icon"></fa-icon>
             <h6>{{ category.category }}</h6>

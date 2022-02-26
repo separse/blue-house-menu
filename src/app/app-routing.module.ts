@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: '**', redirectTo: 'malayer'},
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
