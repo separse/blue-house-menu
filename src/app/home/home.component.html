@@ -1,0 +1,46 @@
+<section>
+    <div class="title-card">
+        <img class="logo" src="/assets/images/logo.jpg" alt="logo">
+        <h1 class="title">کافه خانه آبی</h1>
+    </div>
+    <div class="information">
+        <ul>
+            <li *ngFor="let information of informations">
+                <fa-icon [icon]="information.icon"></fa-icon>
+                <h6>{{ information.value }}</h6>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <div class="menu-tabs">
+        <a 
+            class="menu-tab" 
+            *ngFor="let category of menuData"
+            [routerLink]="'.'"
+            [fragment]="category.category"
+            routerLinkActive="router-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+        >
+            <fa-icon [icon]="category.icon"></fa-icon>
+            <h6>{{ category.category }}</h6>
+        </a>
+    </div>
+    <hr>
+    <div class="menu-items-container">
+        <div *ngFor="let category of menuData" class="menu-items" [id]="category.category">
+            <div class="category-title">{{ category.category }}</div>
+            <div class="items">
+                <div class="item-card" *ngFor="let item of category.items">
+                    <div class="image-container">
+                        <img [src]="item.imagePath !== '' ? item.imagePath : '/assets/images/no-image.png'" [alt]="item.name">
+                    </div>
+                    <h2 class="item-title">{{ item.name }}</h2>
+                    <p class="item-description">{{ item.description }}</p>
+                    <p class="item-price">{{ item.price | number }} تومان</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+$basic-color: #2AE2F1;
+
+/* Font */
+@font-face {
+    font-family: "dana VF";
+    src: url("/assets/font/dana2webGX.woff") format("woff-variations"),
+        url("/assets/font/dana2webGX.woff") format("woff");
+    font-display: fallback;
+}
+@font-face {
+    font-family: dana;
+    src: url("/assets/font/dana-regular.woff") format("woff");
+}
+@font-face {
+    font-family: dana;
+    src: url("/assets/font/dana-bold.woff") format("woff");
+    font-weight: 700;
+}
+body {
+    height: auto;
+    font-family: dana, Tahoma;
+    direction: rtl;
+    background-color: $basic-color;
+    margin: 0;
+    overflow-x: hidden;
+}
+@supports (font-variation-settings: normal) {
+    body {
+        font-family: "dana VF", dana, Tahoma;
+        font-variation-settings: "FANU" 1;
+    }
+}
+/* font-variation-settings: "wght" 700, "FANU" 1, "wdth" 150, "slnt" 0, "DOTQ" 1, "KASH" 10 */
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "dana VF", dana, Tahoma !important;
+}
